@@ -58,7 +58,7 @@ class CaptureScreen {
         fun getBase64Encoded(): String {
             val extension = "png"
             val image = scaleImage(captureScreenRegion()) // Increases size by 3x && Turns image into black & white
-            return "data:image/" + extension + ";base64," + encodeToString(image, extension);
+            return "data:image/" + extension + ";base64," + encodeToString(image, extension)
         }
     }
 

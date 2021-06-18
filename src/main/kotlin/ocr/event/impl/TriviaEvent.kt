@@ -23,9 +23,8 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
     private fun type() {
         //Print last time executed in log
         OCRHandler.getOCRHandler().log(this.javaClass.name, "Attempting to answer a question")
-
         //Enter the string "/daily"
-        val keyArray = arrayOf(VC_SLASH, VC_D, VC_A, VC_I, VC_L, VC_Y);
+        val keyArray = arrayOf(VC_SLASH, VC_D, VC_A, VC_I, VC_L, VC_Y)
         keyArray.forEach { key -> WinHook.pressKey(key) }
         //1 second later, press {ENTER} x2
         WinHook.pressKeyAfter(VC_ENTER, 1, 2)

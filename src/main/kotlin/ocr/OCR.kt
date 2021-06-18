@@ -21,7 +21,7 @@ class OCR {
             Trivia.init()
             //Initiates MainThread & Events
             println(">>Loading OCRHandler<<")
-            OCRHandler.getOCRHandler().init();
+            OCRHandler.getOCRHandler().init()
             //Run Cleanup
             println(">>Finalizing<<")
             System.gc()

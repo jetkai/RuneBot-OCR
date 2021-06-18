@@ -29,10 +29,10 @@ class Trivia {
         private fun sortMatch(question : String) {
             val questionArray = question.split(" ")
             for(trivia in triviaDataArray) {
-                val triviaQuestionArray = trivia.question.split(" ");
+                val triviaQuestionArray = trivia.question.split(" ")
                 val matchAmount = questionArray.indices.count { it < triviaQuestionArray.size && questionArray.contains(triviaQuestionArray[it]) }
                 val percentage = (matchAmount.toDouble() / triviaQuestionArray.size) * 100
-                trivia.matchAmount = percentage;
+                trivia.matchAmount = percentage
             }
             triviaDataArray.sortBy { triviaData: TriviaData -> triviaData.matchAmount }
         }

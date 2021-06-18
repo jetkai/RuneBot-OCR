@@ -10,13 +10,8 @@ class OCRExecutorService {
 
     fun scheduleAtFixedRate(event: Event) {
         mainExecutor.scheduleAtFixedRate({
-            if (event.isRunning) {
-                try {
-                    event.run()
-                } catch (e: java.lang.Exception) {
-                    e.printStackTrace()
-                }
-            }
+            if (event.isRunning)
+                event.run()
         }, event.delay.toLong(), event.delay.toLong(), TimeUnit.SECONDS)
     }
 

@@ -49,7 +49,7 @@ class WinHook {
             GlobalScreen.postNativeEvent(NativeKeyEvent(NATIVE_KEY_PRESSED, 0, 81, key, key.toChar(), KEY_LOCATION_UNKNOWN))
         }
 
-        fun releaseKey(key : Int) {
+        private fun releaseKey(key : Int) {
             GlobalScreen.postNativeEvent(NativeKeyEvent(NATIVE_KEY_RELEASED, 0, 81, key, key.toChar(), KEY_LOCATION_UNKNOWN))
         }
 
@@ -59,11 +59,11 @@ class WinHook {
         }
 
         fun paste() {
-            val keyArray = arrayOf(VC_CONTROL, VC_V);
+            val keyArray = arrayOf(VC_CONTROL, VC_V)
             keyArray.forEach { key ->
                 pressKey(key)
             }
-            releaseKey(VC_CONTROL);
+            releaseKey(VC_CONTROL)
         }
     }
 
