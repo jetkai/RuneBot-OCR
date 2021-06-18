@@ -1,6 +1,7 @@
 package ocr
 
 import ocr.event.Event
+import ocr.event.impl.BuryEvent
 import ocr.event.impl.MineEvent
 import ocr.event.impl.TrainCombatEvent
 import ocr.event.impl.TriviaEvent
@@ -28,6 +29,8 @@ class OCRHandler {
             schedule(TrainCombatEvent())
         if(Constants.mineEventEnabled)
             schedule(MineEvent())
+        if(Constants.buryEventEnabled)
+            schedule(BuryEvent())
     }
 
     fun schedule(event: Event) {

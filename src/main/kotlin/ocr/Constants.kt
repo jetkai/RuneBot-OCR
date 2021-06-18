@@ -6,15 +6,18 @@ object Constants {
     const val trainCombatEventEnabled : Boolean = true
     const val triviaEventEnabled : Boolean = true
     const val mineEventEnabled : Boolean = false
+    const val buryEventEnabled : Boolean = false
 
     //Used in all Events & OCR.kt
     const val discordName = "kai"
 
-    //Used for TrainCombatEvent.kt
+    //Used in TrainCombatEvent.kt
     const val combatType = "melee" //NumPad1 = Melee, NumPad2 = Magic, NumPad3 = Ranged
     const val monster = "rock crab"
 
-    //Used for MineEvent.kt
+    //Used in MineEvent.kt
     const val rock = "coal"
 
+    //Used in BuryEvent.kt
+    const val bones = "bones"
 }
