@@ -1,8 +1,10 @@
 package ocr.misc
 
 import sun.misc.BASE64Encoder
+import java.awt.Dimension
 import java.awt.Rectangle
 import java.awt.Robot
+import java.awt.Toolkit
 import java.awt.geom.AffineTransform
 import java.awt.image.AffineTransformOp
 import java.awt.image.BufferedImage
@@ -18,8 +20,8 @@ class CaptureScreen {
         @Throws(IOException::class)
         private fun captureScreenRegion(): BufferedImage {
             val robot = Robot()
-            val x = 387; val y = 200
-            return robot.createScreenCapture(Rectangle(x, y, 1200, 1308))
+            val screenSize = Toolkit.getDefaultToolkit().getScreenSize()
+            return robot.createScreenCapture(Rectangle(0, 0, screenSize.width, screenSize.height))
         }
 
         /**

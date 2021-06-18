@@ -13,7 +13,7 @@ import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection
 
 
-class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
+class TriviaEvent : Event(20) { //22,000 (seconds) = 6 Hours and a lil bit
 
     override fun run() {
         type()
@@ -22,7 +22,7 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
     private fun type() {
         println("[TriviaEvent] - Attempting to answer a question.")
         //Enter the string "/daily"
-        val keyArray = arrayOf(VC_SLASH, VC_D, VC_A, VC_I, VC_L, VC_Y);
+       /* val keyArray = arrayOf(VC_SLASH, VC_D, VC_A, VC_I, VC_L, VC_Y);
         keyArray.forEach { key ->
             postNativeEvent(NativeKeyEvent(NATIVE_KEY_PRESSED, 0, 81, key, key.toChar(), KEY_LOCATION_UNKNOWN))
         }
@@ -33,7 +33,7 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
                 postNativeEvent(NativeKeyEvent(NATIVE_KEY_PRESSED, 0, 81, VC_ENTER, VC_ENTER.toChar(), KEY_LOCATION_UNKNOWN))
                 this.stop()
             }
-        })
+        })*/
         //3 seconds later, capture screenshot (in-case bot is delayed)
         OCRHandler.getOCRHandler().schedule(object : Event(3) {
             override fun run() {
@@ -71,7 +71,7 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
         //1 second later, press {ENTER}
         OCRHandler.getOCRHandler().schedule(object : Event(1) {
             override fun run() {
-                postNativeEvent(NativeKeyEvent(NATIVE_KEY_PRESSED, 0, 81, VC_ENTER, VC_ENTER.toChar(), KEY_LOCATION_UNKNOWN))
+                //postNativeEvent(NativeKeyEvent(NATIVE_KEY_PRESSED, 0, 81, VC_ENTER, VC_ENTER.toChar(), KEY_LOCATION_UNKNOWN))
                 this.stop()
             }
         })
