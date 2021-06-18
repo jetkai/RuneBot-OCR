@@ -5,4 +5,6 @@ classes/*
 .idea/*
 *.iml
 .gradle
-build/*
+build/classes/*
+build/kotlin/*
+build/tmp/*
