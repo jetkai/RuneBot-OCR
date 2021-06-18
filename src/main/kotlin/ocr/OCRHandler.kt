@@ -1,6 +1,7 @@
 package ocr
 
 import ocr.event.Event
+import ocr.event.impl.MineEvent
 import ocr.event.impl.TrainCombatEvent
 import ocr.event.impl.TriviaEvent
 import java.time.LocalDateTime
@@ -25,6 +26,8 @@ class OCRHandler {
             schedule(TriviaEvent())
         if(Constants.trainCombatEventEnabled)
             schedule(TrainCombatEvent())
+        if(Constants.mineEventEnabled)
+            schedule(MineEvent())
     }
 
     fun schedule(event: Event) {
