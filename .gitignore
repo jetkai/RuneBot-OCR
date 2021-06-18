@@ -5,4 +5,4 @@ classes/*
 .idea/*
 *.iml
 .gradle
-build
+build/*
