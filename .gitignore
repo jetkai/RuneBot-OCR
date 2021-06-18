@@ -8,3 +8,5 @@ classes/*
 build/classes/*
 build/kotlin/*
 build/tmp/*
+build/distributions/*
+build/scripts/*
