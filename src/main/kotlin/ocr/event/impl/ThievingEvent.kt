@@ -5,7 +5,7 @@ import ocr.event.Event
 import ocr.misc.WinHook
 import org.jnativehook.keyboard.NativeKeyEvent
 
-class ThievingEvent : Event(32) { //32 seconds
+class ThievingEvent : Event(35) { //35 seconds
 
     override fun run() {
         if(TriviaEvent.inProgress)
@@ -22,7 +22,7 @@ class ThievingEvent : Event(32) { //32 seconds
         WinHook.paste()
         //1 second later, press {TAB} //TODO POSSIBLE BUG, COMMENTED OUT
         /*WinHook.pressKeyAfter(NativeKeyEvent.VC_TAB, 1)*/
-        //2 seconds later, press {ENTER}
-        WinHook.pressKeyAfter(NativeKeyEvent.VC_ENTER, 2)
+        //2 seconds later, press {ENTER} x2
+        WinHook.pressKeyAfter(NativeKeyEvent.VC_ENTER, 2, 2)
     }
 }
