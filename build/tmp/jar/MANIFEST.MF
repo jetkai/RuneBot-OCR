@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: KotlinTest
-Implementation-Version: 1.0-SNAPSHOT
-Main-Class: ocr.OCR
-
