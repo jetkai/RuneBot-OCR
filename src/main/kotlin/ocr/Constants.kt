@@ -8,6 +8,7 @@ object Constants {
     const val mineEventEnabled : Boolean = false
     const val buryEventEnabled : Boolean = false
     const val chopEventEnabled : Boolean = false
+    const val fishEventEnabled : Boolean = false
 
     //Used in all Events & OCR.kt
     const val discordName = "kai"
@@ -24,4 +25,7 @@ object Constants {
 
     //Used in ChopEvent.kt
     const val logs = "log"
+
+    //Used in FishEvent.kt
+    const val fish = "raw swordfish"
 }

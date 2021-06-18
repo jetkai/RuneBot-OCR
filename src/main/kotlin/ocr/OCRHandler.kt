@@ -30,6 +30,8 @@ class OCRHandler {
             schedule(BuryEvent())
         if(Constants.chopEventEnabled)
             schedule(ChopEvent())
+        if(Constants.fishEventEnabled)
+            schedule(FishEvent())
     }
 
     fun schedule(event: Event) {
