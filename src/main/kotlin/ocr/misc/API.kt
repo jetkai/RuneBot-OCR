@@ -22,26 +22,32 @@ class API {
             val endpoint = URL("https://api.ocr.space/parse/image") // ocr.OCR API Endpoint
             val con = endpoint.openConnection() as HttpsURLConnection
             con.requestMethod = "POST"
+            con.doOutput = true
             con.setRequestProperty("User-Agent", "Mozilla/5.0")
             con.setRequestProperty("Accept-Language", "en-US,en;q=0.5")
+
             val postData = JSONObject()
             postData.put("apikey", "a41e8e316b88957")
             postData.put("isOverlayRequired", false)
             postData.put("base64Image", base64)
             postData.put("language", "eng")
             postData.put("OCREngine", 2)
-            con.doOutput = true
-            val wr = DataOutputStream(con.outputStream)
-            wr.writeBytes(getPostDataString(postData))
-            wr.flush()
-            wr.close()
+
+            val outStream = DataOutputStream(con.outputStream)
+            outStream.writeBytes(getPostDataString(postData))
+            outStream.flush()
+            outStream.close()
+
             val inStream = BufferedReader(InputStreamReader(con.inputStream))
-            var inputLine: String?
+            var inputLine : String?
             val response = StringBuilder()
-            while (inStream.readLine().also { inputLine = it } != null) response.append(inputLine)
+
+            while (inStream.readLine().also { inputLine = it } != null)
+                response.append(inputLine)
             inStream.close()
             val jsonObject = JSONObject(response.toString())
-            return jsonObject.getJSONArray("ParsedResults").getJSONObject(0).getString("ParsedText") //Grabs the output I want from the API
+            //Grabs the output I want from the API
+            return jsonObject.getJSONArray("ParsedResults").getJSONObject(0).getString("ParsedText")
         }
 
         /**

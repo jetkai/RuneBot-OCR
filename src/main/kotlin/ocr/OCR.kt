@@ -22,8 +22,10 @@ class OCR {
             Trivia.init()
             println("Loading OCRHandler")
             OCRHandler.getOCRHandler().init();
+            println("Cleaning up")
             System.gc()
             System.runFinalization()
+            println("Running...")
         }
     }
 

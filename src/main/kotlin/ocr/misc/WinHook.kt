@@ -12,7 +12,6 @@ class WinHook {
 
     companion object {
         fun init() { hook() }
-
         private fun hook() = try {
             LogManager.getLogManager().reset()
             val logger = Logger.getLogger(GlobalScreen::class.java.getPackage().name)

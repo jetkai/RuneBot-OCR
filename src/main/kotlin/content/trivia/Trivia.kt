@@ -21,6 +21,7 @@ class Trivia {
 
         fun getAnswer(question : String): String {
             sortMatch(question)
+            //Output for debugging purposes
             println(triviaDataArray.joinToString { triviaData: TriviaData -> triviaData.question + ":" + triviaData.matchAmount + "\n" })
             return triviaDataArray[triviaDataArray.size - 1].answer
         }

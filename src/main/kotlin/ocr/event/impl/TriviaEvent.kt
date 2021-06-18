@@ -47,7 +47,8 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
         val searchString = "Diango asks " + OCR.discordName
         val maximumLength = 150 //150 to be safe
         return if (content.contains(searchString))
-            content.substring(content.indexOf(searchString) + searchString.length + 4, content.indexOf(searchString) + searchString.length + maximumLength)
+            content.substring(content.indexOf(searchString) + searchString.length + 4,
+                content.indexOf(searchString) + searchString.length + maximumLength)
         else
             content
     }
@@ -56,8 +57,10 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
         val question = question()
         val answer = Trivia.getAnswer(question)
         val selection = StringSelection(answer)
-        Toolkit.getDefaultToolkit().systemClipboard.setContents(selection, selection)
         val keyArray = arrayOf(VC_CONTROL, VC_V);
+        //Copy answer to clipboard
+        Toolkit.getDefaultToolkit().systemClipboard.setContents(selection, selection)
+        //CTRL+V (Paste)
         keyArray.forEach { key ->
             postNativeEvent(NativeKeyEvent(NATIVE_KEY_PRESSED, 0, 81, key, key.toChar(), KEY_LOCATION_UNKNOWN))
         }

@@ -18,16 +18,8 @@ class CaptureScreen {
         @Throws(IOException::class)
         private fun captureScreenRegion(): BufferedImage {
             val robot = Robot()
-            val x = 387
-           // val y = 1308
-            return robot.createScreenCapture(
-                Rectangle(
-                    x,
-                    200,
-                    1200,
-                    1308
-                )
-            )
+            val x = 387; val y = 200
+            return robot.createScreenCapture(Rectangle(x, y, 1200, 1308))
         }
 
         /**

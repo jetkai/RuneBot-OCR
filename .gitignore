@@ -1,0 +1,8 @@
+#exclude folder contents
+
+bin
+classes/*
+.idea/*
+*.iml
+.gradle
+build
