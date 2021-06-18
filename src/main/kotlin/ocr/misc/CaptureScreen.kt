@@ -1,7 +1,6 @@
 package ocr.misc
 
 import sun.misc.BASE64Encoder
-import java.awt.Dimension
 import java.awt.Rectangle
 import java.awt.Robot
 import java.awt.Toolkit
@@ -20,7 +19,7 @@ class CaptureScreen {
         @Throws(IOException::class)
         private fun captureScreenRegion(): BufferedImage {
             val robot = Robot()
-            val screenSize = Toolkit.getDefaultToolkit().getScreenSize()
+            val screenSize = Toolkit.getDefaultToolkit().screenSize
             return robot.createScreenCapture(Rectangle(0, 0, screenSize.width, screenSize.height))
         }
 

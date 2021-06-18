@@ -7,13 +7,10 @@ import java.util.*
 class OCR {
 
     companion object {
-
-        const val discordName = "kai"
-
         @JvmStatic
         fun main(args: Array<String>) {
             println("Starting up RuneBot OCR : Welcome " +
-                    discordName.replaceFirstChar {
+                    Constants.discordName.replaceFirstChar {
                         if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
                     } + ".")
             println("Loading Keyboard & Mouse Hook")
