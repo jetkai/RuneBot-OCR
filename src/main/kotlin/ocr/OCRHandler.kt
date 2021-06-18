@@ -3,6 +3,9 @@ package ocr
 import ocr.event.Event
 import ocr.event.impl.TrainCombatEvent
 import ocr.event.impl.TriviaEvent
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 class OCRHandler {
 
@@ -26,6 +29,12 @@ class OCRHandler {
 
     fun schedule(event: Event) {
         executor.scheduleAtFixedRate(event)
+    }
+
+    fun log(className : String, eventText : String) {
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        println("[$className] - $eventText @ ${current.format(formatter)}")
     }
 
 }

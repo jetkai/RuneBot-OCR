@@ -25,11 +25,7 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
 
     private fun type() {
         //Print last time executed in log
-        val current = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
-        val formattedTime = current.format(formatter)
-
-        println("[TriviaEvent] - Attempting to answer a question @ $formattedTime")
+        OCRHandler.getOCRHandler().log(this.javaClass.name, "Attempting to answer a question")
 
         //Enter the string "/daily"
         val keyArray = arrayOf(VC_SLASH, VC_D, VC_A, VC_I, VC_L, VC_Y);
@@ -37,7 +33,7 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
             WinHook.pressKey(key)
         }
         //1 second later, press {ENTER} x2
-        WinHook.enterAfter(1, 2)
+        WinHook.pressKeyAfter(VC_ENTER, 1, 2)
         //3 seconds later, capture screenshot (in-case bot is delayed)
         OCRHandler.getOCRHandler().schedule(object : Event(3) {
             override fun run() {
@@ -68,7 +64,7 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
         //CTRL+V (Paste)
         WinHook.paste()
         //1 second later, press {ENTER}
-        WinHook.enterAfter(1)
+        WinHook.pressKeyAfter(VC_ENTER,1)
         println("Finished answering: \"$question\", it was \"$answer\".")
         inProgress = false
     }
