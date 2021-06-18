@@ -8,9 +8,6 @@ import ocr.misc.API
 import ocr.misc.CaptureScreen
 import ocr.misc.WinHook
 import org.jnativehook.keyboard.NativeKeyEvent.*
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
 
 class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
 

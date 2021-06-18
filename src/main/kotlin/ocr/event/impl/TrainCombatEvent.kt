@@ -5,10 +5,6 @@ import ocr.OCRHandler
 import ocr.event.Event
 import ocr.misc.WinHook
 import org.jnativehook.keyboard.NativeKeyEvent
-import org.jnativehook.keyboard.NativeKeyListener
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
 
 class TrainCombatEvent : Event(1920) { //1920s = 32 minutes
 
