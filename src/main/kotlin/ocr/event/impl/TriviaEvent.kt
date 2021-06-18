@@ -26,9 +26,7 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
 
         //Enter the string "/daily"
         val keyArray = arrayOf(VC_SLASH, VC_D, VC_A, VC_I, VC_L, VC_Y);
-        keyArray.forEach { key ->
-            WinHook.pressKey(key)
-        }
+        keyArray.forEach { key -> WinHook.pressKey(key) }
         //1 second later, press {ENTER} x2
         WinHook.pressKeyAfter(VC_ENTER, 1, 2)
         //3 seconds later, capture screenshot (in-case bot is delayed)
@@ -54,15 +52,18 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
     }
 
     private fun answer() {
+        //Takes a screenshot of the screen, uploads to OCR API and extracts the question
         val question = question()
+        //Matches best possible answer to the question that is offered
         val answer = Trivia.getAnswer(question)
         //Copy answer to clipboard
         WinHook.copy(answer)
-        //CTRL+V (Paste)
+        //Paste the answer from the clipboard
         WinHook.paste()
         //1 second later, press {ENTER}
         WinHook.pressKeyAfter(VC_ENTER,1)
-        println("Finished answering: \"$question\", it was \"$answer\".")
+        //Event Complete
+        OCRHandler.getOCRHandler().log(this.javaClass.name, "Finished answering: \"$question\", it was \"$answer\".")
         inProgress = false
     }
 

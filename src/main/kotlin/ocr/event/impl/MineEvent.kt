@@ -17,7 +17,7 @@ class MineEvent : Event(1920) { //1920s = 32 minutes
     private fun type() {
         //Print last time executed in log
         OCRHandler.getOCRHandler().log(this.javaClass.name, "Attempting to mine {$Constants.rock}")
-        //Copy answer to clipboard
+        //Copy below string to clipboard
         WinHook.copy("/mine ore:${Constants.rock}")
         //Paste the copied string
         WinHook.paste()

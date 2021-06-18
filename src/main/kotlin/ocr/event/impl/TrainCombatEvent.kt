@@ -17,7 +17,7 @@ class TrainCombatEvent : Event(1920) { //1920s = 32 minutes
     private fun type() {
         //Print last time executed in log
         OCRHandler.getOCRHandler().log(this.javaClass.name, "Attempting to train on ${Constants.monster} with combat-style ${Constants.combatType}")
-        //Copy answer to clipboard
+        //Copy below string to clipboard
         WinHook.copy("/kill combat-style:${Constants.combatType} monster:${Constants.monster}")
         //Paste the copied string
         WinHook.paste()
