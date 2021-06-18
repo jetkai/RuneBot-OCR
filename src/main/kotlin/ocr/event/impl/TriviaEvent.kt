@@ -14,14 +14,15 @@ import java.awt.datatransfer.StringSelection
 
 
 class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
+
     override fun run() {
-        println("[TriviaEvent] - Attempting to answer a question.")
         type()
     }
 
     private fun type() {
+        println("[TriviaEvent] - Attempting to answer a question.")
         //Enter the string "/daily"
-       val keyArray = arrayOf(VC_SLASH, VC_D, VC_A, VC_I, VC_L, VC_Y);
+        val keyArray = arrayOf(VC_SLASH, VC_D, VC_A, VC_I, VC_L, VC_Y);
         keyArray.forEach { key ->
             postNativeEvent(NativeKeyEvent(NATIVE_KEY_PRESSED, 0, 81, key, key.toChar(), KEY_LOCATION_UNKNOWN))
         }
@@ -47,8 +48,10 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
         val searchString = "Diango asks " + OCR.discordName
         val maximumLength = 150 //150 to be safe
         return if (content.contains(searchString))
-            content.substring(content.indexOf(searchString) + searchString.length + 4,
-                content.indexOf(searchString) + searchString.length + maximumLength)
+            content.substring(
+                content.indexOf(searchString) + searchString.length + 4,
+                content.indexOf(searchString) + searchString.length + maximumLength
+            )
         else
             content
     }
