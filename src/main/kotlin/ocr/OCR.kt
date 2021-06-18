@@ -1,7 +1,7 @@
 package ocr
 
-import content.trivia.Trivia
 import ocr.misc.WinHook
+import ocr.trivia.Trivia
 import java.util.*
 
 class OCR {

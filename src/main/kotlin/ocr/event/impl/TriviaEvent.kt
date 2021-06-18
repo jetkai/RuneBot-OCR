@@ -1,12 +1,12 @@
 package ocr.event.impl
 
-import content.trivia.Trivia
 import ocr.Constants
 import ocr.OCRHandler
 import ocr.event.Event
 import ocr.misc.API
 import ocr.misc.CaptureScreen
 import ocr.misc.WinHook
+import ocr.trivia.Trivia
 import org.jnativehook.keyboard.NativeKeyEvent.*
 
 class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit

@@ -1,4 +1,4 @@
-package content.trivia
+package ocr.trivia
 
 import kotlinx.serialization.Serializable
 
