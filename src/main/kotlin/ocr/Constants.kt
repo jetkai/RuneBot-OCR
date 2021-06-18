@@ -7,6 +7,7 @@ object Constants {
     const val triviaEventEnabled : Boolean = true
     const val mineEventEnabled : Boolean = false
     const val buryEventEnabled : Boolean = false
+    const val chopEventEnabled : Boolean = false
 
     //Used in all Events & OCR.kt
     const val discordName = "kai"
@@ -20,4 +21,7 @@ object Constants {
 
     //Used in BuryEvent.kt
     const val bones = "bones"
+
+    //Used in ChopEvent.kt
+    const val logs = "log"
 }
