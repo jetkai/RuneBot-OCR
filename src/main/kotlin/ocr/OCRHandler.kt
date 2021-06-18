@@ -19,7 +19,7 @@ class OCRHandler {
 
     fun init() { registerEvents() }
 
-    private fun registerEvents() {
+    private fun registerEvents() { //TODO - Improve this
         if(Constants.triviaEventEnabled)
             schedule(TriviaEvent())
         if(Constants.trainCombatEventEnabled)
@@ -32,6 +32,8 @@ class OCRHandler {
             schedule(ChopEvent())
         if(Constants.fishEventEnabled)
             schedule(FishEvent())
+        if(Constants.cookEventEnabled)
+            schedule(CookEvent())
     }
 
     fun schedule(event: Event) {

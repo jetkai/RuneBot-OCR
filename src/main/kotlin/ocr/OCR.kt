@@ -9,21 +9,27 @@ class OCR {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            println("Starting up RuneBot OCR : Welcome " +
+            OCRHandler.getOCRHandler().log("OCR-INIT", "Starting up RuneBot OCR : Welcome " +
                     Constants.discordName.replaceFirstChar {
                         if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
                     } + ".")
-            println("Loading Keyboard & Mouse Hook")
+            //Hooks into Windows, can listen & register key inputs
+            println(">>Loading Keyboard & Mouse Hook<<")
             WinHook.init()
-            println("Loading Trivia Questions")
+            //Loads Trivia questions from JSON
+            println(">>Loading Trivia Questions<<")
             Trivia.init()
-            println("Loading OCRHandler")
+            //Initiates MainThread & Events
+            println(">>Loading OCRHandler<<")
             OCRHandler.getOCRHandler().init();
-            println("Cleaning up")
+            //Run Cleanup
+            println(">>Finalizing<<")
             System.gc()
             System.runFinalization()
-            println("Running...")
+            //Completed
+            OCRHandler.getOCRHandler().log("OCR-INIT", "Events loaded successfully, now running...")
         }
+
     }
 
 }

@@ -2,13 +2,14 @@ package ocr
 
 object Constants {
 
-    //Set Enabled Events
+    //Set Enabled Events TODO - Improve this
     const val trainCombatEventEnabled : Boolean = true
     const val triviaEventEnabled : Boolean = true
     const val mineEventEnabled : Boolean = false
     const val buryEventEnabled : Boolean = false
     const val chopEventEnabled : Boolean = false
     const val fishEventEnabled : Boolean = false
+    const val cookEventEnabled : Boolean = false
 
     //Used in all Events & OCR.kt
     const val discordName = "kai"
@@ -26,6 +27,7 @@ object Constants {
     //Used in ChopEvent.kt
     const val logs = "log"
 
-    //Used in FishEvent.kt
+    //Used in FishEvent.kt & CookEvent.kt
     const val fish = "raw swordfish"
+
 }
