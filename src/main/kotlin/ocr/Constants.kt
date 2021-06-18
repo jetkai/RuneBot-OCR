@@ -10,6 +10,7 @@ object Constants {
     const val chopEventEnabled : Boolean = false
     const val fishEventEnabled : Boolean = false
     const val cookEventEnabled : Boolean = false
+    const val thievingEventEnabled : Boolean = false
 
     //Used in all Events & OCR.kt
     const val discordName = "kai"

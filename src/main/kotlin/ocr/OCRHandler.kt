@@ -8,11 +8,11 @@ import java.time.format.FormatStyle
 
 class OCRHandler {
 
-    private val executor: OCRExecutorService = OCRExecutorService()
+    private val executor : OCRExecutorService = OCRExecutorService()
 
     companion object {
-        private val INSTANCE: OCRHandler = OCRHandler()
-        fun getOCRHandler(): OCRHandler {
+        private val INSTANCE : OCRHandler = OCRHandler()
+        fun getOCRHandler() : OCRHandler {
             return INSTANCE
         }
     }
@@ -34,9 +34,11 @@ class OCRHandler {
             schedule(FishEvent())
         if(Constants.cookEventEnabled)
             schedule(CookEvent())
+        if(Constants.thievingEventEnabled)
+            schedule(ThievingEvent())
     }
 
-    fun schedule(event: Event) {
+    fun schedule(event : Event) {
         executor.scheduleAtFixedRate(event)
     }
 
