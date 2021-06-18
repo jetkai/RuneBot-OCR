@@ -21,8 +21,8 @@ class ChopEvent : Event(1920) { //1920s = 32 minutes
         WinHook.copy("/chop log:${Constants.logs}")
         //Paste the copied string
         WinHook.paste()
-        //1 second later, press {TAB}
-        WinHook.pressKeyAfter(NativeKeyEvent.VC_TAB, 1)
+        //1 second later, press {TAB} //TODO POSSIBLE BUG, COMMENTED OUT
+        /*WinHook.pressKeyAfter(NativeKeyEvent.VC_TAB, 1)*/
         //2 seconds later, press {ENTER}
         WinHook.pressKeyAfter(NativeKeyEvent.VC_ENTER, 2)
     }

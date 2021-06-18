@@ -20,8 +20,8 @@ class ThievingEvent : Event(32) { //32 seconds
         WinHook.copy("/ts")
         //Paste the copied string
         WinHook.paste()
-        //1 second later, press {TAB}
-        WinHook.pressKeyAfter(NativeKeyEvent.VC_TAB, 1)
+        //1 second later, press {TAB} //TODO POSSIBLE BUG, COMMENTED OUT
+        /*WinHook.pressKeyAfter(NativeKeyEvent.VC_TAB, 1)*/
         //2 seconds later, press {ENTER}
         WinHook.pressKeyAfter(NativeKeyEvent.VC_ENTER, 2)
     }
