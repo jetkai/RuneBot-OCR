@@ -11,18 +11,26 @@ import org.jnativehook.keyboard.NativeKeyEvent
 import org.jnativehook.keyboard.NativeKeyEvent.*
 import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 
-class TriviaEvent : Event(20) { //22,000 (seconds) = 6 Hours and a lil bit
+class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
 
     override fun run() {
         type()
     }
 
     private fun type() {
-        println("[TriviaEvent] - Attempting to answer a question.")
+        //Print last time executed in log
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        val formattedTime = current.format(formatter)
+        println("[TriviaEvent] - Attempting to answer a question @ $formattedTime")
+
         //Enter the string "/daily"
-       /* val keyArray = arrayOf(VC_SLASH, VC_D, VC_A, VC_I, VC_L, VC_Y);
+        val keyArray = arrayOf(VC_SLASH, VC_D, VC_A, VC_I, VC_L, VC_Y);
         keyArray.forEach { key ->
             postNativeEvent(NativeKeyEvent(NATIVE_KEY_PRESSED, 0, 81, key, key.toChar(), KEY_LOCATION_UNKNOWN))
         }
@@ -33,7 +41,7 @@ class TriviaEvent : Event(20) { //22,000 (seconds) = 6 Hours and a lil bit
                 postNativeEvent(NativeKeyEvent(NATIVE_KEY_PRESSED, 0, 81, VC_ENTER, VC_ENTER.toChar(), KEY_LOCATION_UNKNOWN))
                 this.stop()
             }
-        })*/
+        })
         //3 seconds later, capture screenshot (in-case bot is delayed)
         OCRHandler.getOCRHandler().schedule(object : Event(3) {
             override fun run() {
@@ -71,7 +79,7 @@ class TriviaEvent : Event(20) { //22,000 (seconds) = 6 Hours and a lil bit
         //1 second later, press {ENTER}
         OCRHandler.getOCRHandler().schedule(object : Event(1) {
             override fun run() {
-                //postNativeEvent(NativeKeyEvent(NATIVE_KEY_PRESSED, 0, 81, VC_ENTER, VC_ENTER.toChar(), KEY_LOCATION_UNKNOWN))
+                postNativeEvent(NativeKeyEvent(NATIVE_KEY_PRESSED, 0, 81, VC_ENTER, VC_ENTER.toChar(), KEY_LOCATION_UNKNOWN))
                 this.stop()
             }
         })

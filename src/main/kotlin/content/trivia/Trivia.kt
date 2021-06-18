@@ -11,7 +11,7 @@ class Trivia {
         private lateinit var triviaDataArray : Array<TriviaData>
 
         fun init() {
-            val triviaDataFile = File("././data/questions.json").readText()
+            val triviaDataFile = File("./data/questions.json").readText()
             val json = Json {
                 this.prettyPrint = true
                 this.encodeDefaults = true
