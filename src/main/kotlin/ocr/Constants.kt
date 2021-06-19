@@ -22,6 +22,7 @@ object Constants {
     const val pickPocketEventEnabled : Boolean = false
     const val smeltEventEnabled : Boolean = false
     const val smithEventEnabled : Boolean = false
+    const val barrowsEventEnabled : Boolean = false
 
     //Used in all Events & OCR.kt
     const val discordName = "kai"

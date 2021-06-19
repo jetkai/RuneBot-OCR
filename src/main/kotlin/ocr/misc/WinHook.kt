@@ -37,9 +37,7 @@ class WinHook {
         fun pressKeyAfter(key : Int, delay : Int, amount : Int) {
             OCRHandler.getOCRHandler().schedule(object : Event(delay) {
                 override fun run() {
-                    repeat((0 until amount).count()) {
-                        pressKey(key)
-                    }
+                    repeat((0 until amount).count()) { pressKey(key) }
                     this.stop()
                 }
             })
@@ -60,9 +58,7 @@ class WinHook {
 
         fun paste() {
             val keyArray = arrayOf(VC_CONTROL, VC_V)
-            keyArray.forEach { key ->
-                pressKey(key)
-            }
+            keyArray.forEach { key -> pressKey(key) }
             releaseKey(VC_CONTROL)
         }
     }
