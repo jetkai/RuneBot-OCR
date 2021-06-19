@@ -6,7 +6,7 @@ import ocr.event.Event
 import ocr.misc.WinHook
 import org.jnativehook.keyboard.NativeKeyEvent
 
-class TrainCombatEvent : Event(1920) { //1920s = 32 minutes
+class TrainCombatEvent : Event(1920) { //1920s = 32 minutes, 7400s = 2 hours and a few minutes
 
     override fun run() {
         if(TriviaEvent.inProgress)
