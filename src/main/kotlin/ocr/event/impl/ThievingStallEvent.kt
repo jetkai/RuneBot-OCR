@@ -5,7 +5,7 @@ import ocr.event.Event
 import ocr.misc.WinHook
 import org.jnativehook.keyboard.NativeKeyEvent
 
-class ThievingEvent : Event(35) { //35 seconds
+class ThievingStallEvent : Event(35) { //35 seconds
 
     override fun run() {
         if(TriviaEvent.inProgress)

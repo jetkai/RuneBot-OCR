@@ -35,7 +35,11 @@ class OCRHandler {
         if(Constants.cookEventEnabled)
             schedule(CookEvent())
         if(Constants.thievingEventEnabled)
-            schedule(ThievingEvent())
+            schedule(ThievingStallEvent())
+        if(Constants.thievingEventEnabled)
+            schedule(ThievingStallEvent())
+        if(Constants.pickPocketEventEnabled)
+            schedule(PickPocketEvent())
     }
 
     fun schedule(event : Event) {

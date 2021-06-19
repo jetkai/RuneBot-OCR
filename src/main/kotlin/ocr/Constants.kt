@@ -11,6 +11,7 @@ object Constants {
     const val fishEventEnabled : Boolean = false
     const val cookEventEnabled : Boolean = false
     const val thievingEventEnabled : Boolean = false
+    const val pickPocketEventEnabled : Boolean = false
 
     //Used in all Events & OCR.kt
     const val discordName = "kai"
@@ -26,9 +27,12 @@ object Constants {
     const val bones = "bones"
 
     //Used in ChopEvent.kt
-    const val logs = "log"
+    const val logs = "log" //Will read from json, best item for x level
 
     //Used in FishEvent.kt & CookEvent.kt
-    const val fish = "raw swordfish"
+    const val fish = "raw swordfish" //Will read from json, best item for x level
+
+    //Used in PickPocketEvent.kt
+    const val npc = "man"
 
 }
