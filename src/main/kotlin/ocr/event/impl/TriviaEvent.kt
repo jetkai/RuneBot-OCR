@@ -7,7 +7,6 @@ import ocr.misc.API
 import ocr.misc.CaptureScreen
 import ocr.misc.WinHook
 import ocr.trivia.Trivia
-import org.jnativehook.keyboard.NativeKeyEvent
 import org.jnativehook.keyboard.NativeKeyEvent.*
 
 class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
@@ -61,7 +60,7 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
         //Paste the answer from the clipboard
         WinHook.paste()
         //2 seconds later, press {ENTER} x2
-        WinHook.pressKeyAfter(NativeKeyEvent.VC_ENTER, 2, 2)
+        WinHook.pressKeyAfter(VC_ENTER, 2, 2)
         //Event Complete
         OCRHandler.getOCRHandler().log(this.javaClass.name, "Finished answering: \"$question\", it was \"$answer\".")
         inProgress = false

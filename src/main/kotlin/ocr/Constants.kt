@@ -23,6 +23,7 @@ object Constants {
     const val smeltEventEnabled : Boolean = false
     const val smithEventEnabled : Boolean = false
     const val barrowsEventEnabled : Boolean = false
+    const val alchEventEnabled : Boolean = true
 
     //Used in all Events & OCR.kt
     const val discordName = "kai"
@@ -52,5 +53,9 @@ object Constants {
 
     //Used in SmithEvent.kt, TEMP
     const val smithItem = "bronze dagger"
+
+    //Used in AlchEvent.kt, TEMP
+    const val alchItem = "bearhead"
+    const val alchAmount = 800
 
 }
