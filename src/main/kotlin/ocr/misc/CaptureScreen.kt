@@ -28,9 +28,9 @@ class CaptureScreen {
          */
         @Throws(IOException::class)
         private fun scaleImage(image: BufferedImage): BufferedImage {
-            val w = image.width
-            val h = image.height
-            var scaledImage = BufferedImage(w * 1, h * 1, BufferedImage.TYPE_INT_ARGB)
+            val width = image.width
+            val height = image.height
+            var scaledImage = BufferedImage(width * 1, height * 1, BufferedImage.TYPE_INT_ARGB)
             val at = AffineTransform.getScaleInstance(1.0, 1.0)
             val ato = AffineTransformOp(at, AffineTransformOp.TYPE_BICUBIC)
             scaledImage = ato.filter(image, scaledImage)

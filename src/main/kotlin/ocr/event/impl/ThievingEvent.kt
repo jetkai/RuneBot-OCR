@@ -13,6 +13,7 @@ class ThievingEvent : Event(35) { //35 seconds
         type()
     }
 
+    //TODO Complete Random Event (Trivia Questions): "@jet kai, random event, answer the following question... Name a guthix shield."
     private fun type() {
         //Print last time executed in log
         OCRHandler.getOCRHandler().log(this.javaClass.name, "Attempting to thieve the stall")
