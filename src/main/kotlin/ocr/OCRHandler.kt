@@ -31,6 +31,7 @@ class OCRHandler {
         when { Constants.thievingEventEnabled -> schedule(ThievingStallEvent()) }
         when { Constants.pickPocketEventEnabled -> schedule(PickPocketEvent()) }
         when { Constants.smeltEventEnabled -> schedule(SmeltEvent()) }
+        when { Constants.smithEventEnabled -> schedule(SmithEvent()) }
     }
 
     fun schedule(event : Event) {
