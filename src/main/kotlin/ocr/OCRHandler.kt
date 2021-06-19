@@ -20,26 +20,17 @@ class OCRHandler {
     fun init() { registerEvents() }
 
     private fun registerEvents() { //TODO - Improve this
-        if(Constants.triviaEventEnabled)
-            schedule(TriviaEvent())
-        if(Constants.trainCombatEventEnabled)
-            schedule(TrainCombatEvent())
-        if(Constants.mineEventEnabled)
-            schedule(MineEvent())
-        if(Constants.buryEventEnabled)
-            schedule(BuryEvent())
-        if(Constants.chopEventEnabled)
-            schedule(ChopEvent())
-        if(Constants.fishEventEnabled)
-            schedule(FishEvent())
-        if(Constants.cookEventEnabled)
-            schedule(CookEvent())
-        if(Constants.thievingEventEnabled)
-            schedule(ThievingStallEvent())
-        if(Constants.thievingEventEnabled)
-            schedule(ThievingStallEvent())
-        if(Constants.pickPocketEventEnabled)
-            schedule(PickPocketEvent())
+        when { Constants.triviaEventEnabled -> schedule(TriviaEvent()) }
+        when { Constants.trainCombatEventEnabled -> schedule(TrainCombatEvent()) }
+        when { Constants.mineEventEnabled -> schedule(MineEvent()) }
+        when { Constants.buryEventEnabled -> schedule(BuryEvent()) }
+        when { Constants.chopEventEnabled -> schedule(ChopEvent()) }
+        when { Constants.fishEventEnabled -> schedule(FishEvent()) }
+        when { Constants.cookEventEnabled -> schedule(CookEvent()) }
+        when { Constants.thievingEventEnabled -> schedule(ThievingStallEvent()) }
+        when { Constants.thievingEventEnabled -> schedule(ThievingStallEvent()) }
+        when { Constants.pickPocketEventEnabled -> schedule(PickPocketEvent()) }
+        when { Constants.smeltEventEnabled -> schedule(SmeltEvent()) }
     }
 
     fun schedule(event : Event) {
