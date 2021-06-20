@@ -47,7 +47,10 @@ class API {
             inStream.close()
             val jsonObject = JSONObject(response.toString())
             //Grabs the output I want from the API
-            return jsonObject.getJSONArray("ParsedResults").getJSONObject(0).getString("ParsedText")
+            println("OCR Response: $response")
+            val parsedText = jsonObject.getJSONArray("ParsedResults").getJSONObject(0).getString("ParsedText");
+            println("OCR Parsed Text: $parsedText")
+            return parsedText
         }
 
         /**
