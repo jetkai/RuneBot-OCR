@@ -22,9 +22,9 @@ class MineEvent : Event(Random.nextInt(1920, 2460)) { //1920s = 32 minutes
         WinHook.copy("/mine ore:${Constants.rock}")
         //Paste the copied string
         WinHook.paste()
-        //1 second later, press {TAB} //TODO POSSIBLE BUG, COMMENTED OUT
-        /*WinHook.pressKeyAfter(NativeKeyEvent.VC_TAB, 1)*/
-        //2 seconds later, press {ENTER} x2
-        WinHook.pressKeyAfter(NativeKeyEvent.VC_ENTER, 2, 2)
+        //2 second later, press {SPACE}
+        WinHook.pressKeyAfter(NativeKeyEvent.VC_SPACE, 2)
+        //4 seconds later, press {ENTER} x2
+        WinHook.pressKeyAfter(NativeKeyEvent.VC_ENTER, 4, 2)
     }
 }
