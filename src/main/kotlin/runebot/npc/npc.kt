@@ -83,8 +83,6 @@ fun main() {
 @Throws(IOException::class)
 
 fun init() : Map<Int, NPCDefinition> {
-    //NPCDefinitionPacker.pack();
-    //System.out.println(CacheManager525.getAmountOfNpcs());
     val totalNpcs = 13657
     val definitions = mutableMapOf<Int, NPCDefinition>()
     println("Loading runebot.npc definitions...")
