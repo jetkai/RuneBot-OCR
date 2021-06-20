@@ -6,7 +6,7 @@ plugins {
     application
 }
 
-group = "ocr.OCR"
+group = "runebot.ocr.OCR"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -22,12 +22,12 @@ tasks.withType<Jar> {
     manifest {
         attributes["Implementation-Title"] = project.name
         attributes["Implementation-Version"] = project.version
-        attributes["Main-Class"] = "ocr.OCR"
+        attributes["Main-Class"] = "runebot.ocr.OCR"
     }
     from(sourceSets.main.get().output)
         dependsOn(configurations.runtimeClasspath)
     from({ configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) } })
-        application { mainClassName = "ocr.OCR"}
+        application { mainClassName = "runebot.ocr.OCR"}
 }
 
 tasks {
