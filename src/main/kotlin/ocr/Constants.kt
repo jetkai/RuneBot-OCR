@@ -11,7 +11,7 @@ object Constants {
      */
 
     //Set Enabled Events
-    const val trainCombatEventEnabled : Boolean = false
+    const val trainCombatEventEnabled : Boolean = true
     const val triviaEventEnabled : Boolean = true
     const val mineEventEnabled : Boolean = false
     const val buryEventEnabled : Boolean = false
@@ -22,15 +22,15 @@ object Constants {
     const val pickPocketEventEnabled : Boolean = false
     const val smeltEventEnabled : Boolean = false
     const val smithEventEnabled : Boolean = false
-    const val barrowsEventEnabled : Boolean = true
-    const val alchEventEnabled : Boolean = false
+    const val barrowsEventEnabled : Boolean = false
+    const val alchEventEnabled : Boolean = true
 
     //Used in all Events & OCR.kt
     const val discordName = "kai"
 
     //Used in TrainCombatEvent.kt, TEMP
     const val combatType = "melee" //NumPad1 = Melee, NumPad2 = Magic, NumPad3 = Ranged
-    const val monster = "abyssal demon"
+    const val monster = "general graardor"
     const val time = 30
 
     //Used in MineEvent.kt, TEMP

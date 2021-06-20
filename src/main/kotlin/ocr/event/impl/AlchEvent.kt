@@ -21,9 +21,9 @@ class AlchEvent : Event(2120) { //2120s = ~35 minutes, 7400s = 2 hours and a few
         WinHook.copy("/alch item:${Constants.alchItem} amount:${Constants.alchAmount}")
         //Paste the copied string
         WinHook.paste()
-        //1 second later, press {TAB}
-        WinHook.pressKeyAfter(NativeKeyEvent.VC_TAB, 1)
-        //2 seconds later, press {ENTER} x2
-        WinHook.pressKeyAfter(NativeKeyEvent.VC_ENTER, 2, 2)
+        //2 second later, press {TAB}
+        WinHook.pressKeyAfter(NativeKeyEvent.VC_TAB, 2)
+        //4 seconds later, press {ENTER} x2
+        WinHook.pressKeyAfter(NativeKeyEvent.VC_ENTER, 4, 2)
     }
 }
