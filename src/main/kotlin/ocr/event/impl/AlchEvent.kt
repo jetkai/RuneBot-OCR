@@ -5,10 +5,12 @@ import ocr.OCRHandler
 import ocr.event.Event
 import ocr.misc.WinHook
 import org.jnativehook.keyboard.NativeKeyEvent
+import kotlin.random.Random
 
-class AlchEvent : Event(2120) { //2120s = ~35 minutes, 7400s = 2 hours and a few minutes
+class AlchEvent : Event(Random.nextInt(2115, 4215)) { //2120s = ~35 minutes, 7400s = 2 hours and a few minutes
 
     override fun run() {
+        this.delay = Random.nextInt(2115, 4215);
         if(!TriviaEvent.inProgress)
             type()
     }

@@ -8,18 +8,18 @@ import ocr.misc.CaptureScreen
 import ocr.misc.WinHook
 import ocr.trivia.Trivia
 import org.jnativehook.keyboard.NativeKeyEvent.*
+import kotlin.random.Random
 
-class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
+class TriviaEvent : Event(Random.nextInt(220000, 240000)) { //22,000 (seconds) = 6 Hours and a lil bit
 
     companion object {
         var inProgress : Boolean = false
     }
 
-    override fun run() = try {
+    override fun run() {
+        this.delay = Random.nextInt(220000, 240000);
         inProgress = true
         type()
-    } catch (exception: Exception) {
-        exception.printStackTrace()
     }
 
     private fun type() {

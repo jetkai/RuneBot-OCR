@@ -34,6 +34,7 @@ class OCRHandler {
         when { Constants.smithEventEnabled -> schedule(SmithEvent()) }
         when { Constants.barrowsEventEnabled -> schedule(BarrowsEvent()) }
         when { Constants.alchEventEnabled -> schedule(AlchEvent()) }
+        when { Constants.mEventEnabled -> schedule(mEvent()) }
     }
 
     fun schedule(event : Event) {

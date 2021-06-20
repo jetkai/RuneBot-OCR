@@ -24,6 +24,7 @@ object Constants {
     const val smithEventEnabled : Boolean = false
     const val barrowsEventEnabled : Boolean = false
     const val alchEventEnabled : Boolean = true
+    const val mEventEnabled : Boolean = false
 
     //Used in all Events & OCR.kt
     const val discordName = "kai"

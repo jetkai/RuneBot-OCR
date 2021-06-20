@@ -7,19 +7,19 @@ import ocr.misc.WinHook
 import org.jnativehook.keyboard.NativeKeyEvent
 import kotlin.random.Random
 
-class BarrowsEvent : Event(Random.nextInt(1920, 2460)) { //1920s = 32 minutes, 7400s = 2 hours and a few minutes
+class mEvent : Event(Random.nextInt(2115, 4215)) { //2120s = ~35 minutes, 7400s = 2 hours and a few minutes
 
     override fun run() {
-        this.delay = Random.nextInt(1920, 2460)
+        this.delay = Random.nextInt(2115, 4215)
         if(!TriviaEvent.inProgress)
             type()
     }
 
     private fun type() {
         //Print last time executed in log
-        OCRHandler.getOCRHandler().log(this.javaClass.name, "Attempting to do a barrows run")
+        OCRHandler.getOCRHandler().log(this.javaClass.name, "Attempting to check current task")
         //Copy below string to clipboard
-        WinHook.copy("/barrows combat-style:${Constants.combatType}")
+        WinHook.copy("/m")
         //Paste the copied string
         WinHook.paste()
         //2 second later, press {SPACE}
