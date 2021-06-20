@@ -6,28 +6,23 @@ plugins {
     application
 }
 
-group = "runebot.ocr.OCR"
+group = "runebot.RuneBotOCR"
 version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
 }
 
-tasks.register<Copy>("copyJsonQuestions") {
-    from(layout.buildDirectory.file("data/questions.json"))
-    into(layout.buildDirectory.dir("toArchive"))
-}
-
 tasks.withType<Jar> {
     manifest {
         attributes["Implementation-Title"] = project.name
         attributes["Implementation-Version"] = project.version
-        attributes["Main-Class"] = "runebot.ocr.OCR"
+        attributes["Main-Class"] = "runebot.RuneBotOCR"
     }
     from(sourceSets.main.get().output)
         dependsOn(configurations.runtimeClasspath)
     from({ configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) } })
-        application { mainClassName = "runebot.ocr.OCR"}
+        application { mainClassName = "runebot.RuneBotOCR"}
 }
 
 tasks {
