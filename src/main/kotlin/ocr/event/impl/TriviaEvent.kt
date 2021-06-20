@@ -63,8 +63,8 @@ class TriviaEvent : Event(22000) { //22,000 (seconds) = 6 Hours and a lil bit
         WinHook.copy(answer)
         //Paste the answer from the clipboard
         WinHook.paste()
-        //2 second later, press {TAB}
-        WinHook.pressKeyAfter(VC_TAB, 2)
+        //2 second later, press {SPACE}
+        WinHook.pressKeyAfter(NativeKeyEvent.VC_SPACE, 2)
         //3 seconds later, press {ENTER} x2
         WinHook.pressKeyAfter(VC_ENTER, 3, 2)
         //Event Complete

@@ -21,9 +21,20 @@ class AlchEvent : Event(2120) { //2120s = ~35 minutes, 7400s = 2 hours and a few
         WinHook.copy("/alch item:${Constants.alchItem} amount:${Constants.alchAmount}")
         //Paste the copied string
         WinHook.paste()
-        //2 second later, press {TAB}
-        WinHook.pressKeyAfter(NativeKeyEvent.VC_TAB, 2)
+        //2 second later, press {SPACE}
+        WinHook.pressKeyAfter(NativeKeyEvent.VC_SPACE, 2)
         //4 seconds later, press {ENTER} x2
         WinHook.pressKeyAfter(NativeKeyEvent.VC_ENTER, 4, 2)
+
+        OCRHandler.getOCRHandler().schedule(object : Event(8) {
+            override fun run() {
+                WinHook.copy("confirm")
+                //Paste the copied string
+                WinHook.paste()
+                //4 seconds later, press {ENTER} x2
+                WinHook.pressKeyAfter(NativeKeyEvent.VC_ENTER, 2, 2)
+                this.stop()
+            }
+        })
     }
 }
