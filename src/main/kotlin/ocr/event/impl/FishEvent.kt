@@ -9,9 +9,8 @@ import org.jnativehook.keyboard.NativeKeyEvent
 class FishEvent : Event(1920) { //1920s = 32 minutes
 
     override fun run() {
-        if(TriviaEvent.inProgress)
-            Thread.sleep(120000) //Sleep for 2 minutes
-        type()
+        if(!TriviaEvent.inProgress)
+            type()
     }
 
     private fun type() {

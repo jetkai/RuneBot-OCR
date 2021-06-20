@@ -8,9 +8,8 @@ import org.jnativehook.keyboard.NativeKeyEvent
 class ThievingStallEvent : Event(35) { //35 seconds
 
     override fun run() {
-        if(TriviaEvent.inProgress)
-            Thread.sleep(120000) //Sleep for 2 minutes
-        type()
+        if(!TriviaEvent.inProgress)
+            type()
     }
 
     //TODO Complete Random Event (Trivia Questions): "@jet kai, random event, answer the following question... Name a guthix shield."
