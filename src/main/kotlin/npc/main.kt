@@ -11,18 +11,18 @@ import java.nio.channels.FileChannel
 
 fun main() {
 
-    val npcDataFile = File("data/npc-data.json").readText()
-    val npcBonuses = File("data/npc_bonuses_685_cache.json").readText()
-    val npcAttackSpeedFile = File("data/npc_attack_speeds_685_cache.json").readText()
+    val npcDataFile = main()::class.java.classLoader.getResource("data/npc-data.json")?.readText()
+    val npcBonuses = main()::class.java.classLoader.getResource("data/npc_bonuses_685_cache.json")?.readText()
+    val npcAttackSpeedFile = main()::class.java.classLoader.getResource("data/npc_attack_speeds_685_cache.json")?.readText()
 
     val npcDefinitions = Json {
         this.prettyPrint = true
         this.encodeDefaults = true
     }
 
-    val npcBonusArray = npcDefinitions.decodeFromString<Array<NPCBonuses>>(npcBonuses)
-    val npcDataArray = npcDefinitions.decodeFromString<Array<NPCData>>(npcDataFile)
-    val npcAttackArray = npcDefinitions.decodeFromString<Array<NPCAttackSpeed>>(npcAttackSpeedFile)
+    val npcBonusArray = npcDefinitions.decodeFromString<Array<NPCBonuses>>(npcBonuses!!)
+    val npcDataArray = npcDefinitions.decodeFromString<Array<NPCData>>(npcDataFile!!)
+    val npcAttackArray = npcDefinitions.decodeFromString<Array<NPCAttackSpeed>>(npcAttackSpeedFile!!)
 
     val npcBonusesMap = npcBonusArray.associateBy { it.id }
     val npcDataMap = npcDataArray.associateBy { it.id }
@@ -72,7 +72,7 @@ fun main() {
         }
     }
     val encodedString = npcDefinitions.encodeToString(npcs.values.toTypedArray())
-    File("data/final.json").writeText(encodedString)
+    File("local/final.json").writeText(encodedString)
 }
 
 /**
@@ -88,7 +88,7 @@ fun init() : Map<Int, NPCDefinition> {
     val totalNpcs = 13657
     val definitions = mutableMapOf<Int, NPCDefinition>()
     println("Loading npc definitions...")
-    val channel = RandomAccessFile("data/NPCDefinitions.bin", "r").channel
+    val channel = RandomAccessFile("local/NPCDefinitions.bin", "r").channel
     val buffer: ByteBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, channel.size())
     for (i in 0 until totalNpcs) {
         val id = buffer.short.toInt()

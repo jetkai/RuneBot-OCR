@@ -13,6 +13,11 @@ repositories {
     mavenCentral()
 }
 
+tasks.register<Copy>("copyJsonQuestions") {
+    from(layout.buildDirectory.file("data/questions.json"))
+    into(layout.buildDirectory.dir("toArchive"))
+}
+
 tasks.withType<Jar> {
     manifest {
         attributes["Implementation-Title"] = project.name

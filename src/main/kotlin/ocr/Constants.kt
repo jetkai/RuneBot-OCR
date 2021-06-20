@@ -31,7 +31,7 @@ object Constants {
 
     //Used in TrainCombatEvent.kt, TEMP
     const val combatType = "melee" //NumPad1 = Melee, NumPad2 = Magic, NumPad3 = Ranged
-    const val monster = "general graardor"
+    const val monster = "tree spirit" //Common: general graardor
     const val time = 30
 
     //Used in MineEvent.kt, TEMP
@@ -56,7 +56,7 @@ object Constants {
     const val smithItem = "bronze dagger"
 
     //Used in AlchEvent.kt, TEMP
-    const val alchItem = "bearhead"
+    const val alchItem = "slayer gloves"
     const val alchAmount = 800
 
 }

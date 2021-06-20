@@ -10,14 +10,14 @@ import ocr.trivia.Trivia
 import org.jnativehook.keyboard.NativeKeyEvent.*
 import kotlin.random.Random
 
-class TriviaEvent : Event(Random.nextInt(220000, 240000)) { //22,000 (seconds) = 6 Hours and a lil bit
+class TriviaEvent : Event(Random.nextInt(22000, 24000)) { //22,000 (seconds) = 6 Hours and a lil bit
 
     companion object {
         var inProgress : Boolean = false
     }
 
     override fun run() {
-        this.delay = Random.nextInt(220000, 240000);
+        this.delay = Random.nextInt(22000, 24000);
         inProgress = true
         type()
     }

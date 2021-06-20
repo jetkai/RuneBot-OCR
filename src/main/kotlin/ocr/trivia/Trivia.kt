@@ -2,7 +2,6 @@ package ocr.trivia
 
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
-import java.io.File
 
 class Trivia {
 
@@ -11,12 +10,12 @@ class Trivia {
         private lateinit var triviaDataArray : Array<TriviaData>
 
         fun init() {
-            val triviaDataFile = File("./data/questions.json").readText()
+            val triviaDataFile = this::class.java.classLoader.getResource("data/questions.json")?.readText()
             val json = Json {
                 this.prettyPrint = true
                 this.encodeDefaults = true
             }
-            triviaDataArray = json.decodeFromString(triviaDataFile)
+            triviaDataArray = json.decodeFromString(triviaDataFile!!)
         }
 
         fun getAnswer(question : String): String {
