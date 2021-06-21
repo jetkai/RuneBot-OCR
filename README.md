@@ -5,9 +5,10 @@ JAR: [[KotlinTest-1.0-SNAPSHOT.jar](https://github.com/KaiBurton/RuneBot-OCR/blo
 
 ## Requirements
 
-- Virtual Machine that has Discord open at all times
-- RuneBot Discord -> runebot-commands channel selected
-- Your own API key from https://ocr.space, you can obtain one for free and replace the current key within ```runebot.ocr.misc.API -> postData.put("apikey", "YOUR_KEY")```
+- [Discord](https://discord.gg) web or desktop app.
+- Virtual Machine that has Discord open at all times.
+- [RuneBot Discord](https://discord.gg/Pk9M3TKFzF) -> `runebot-commands` channel selected.
+- Your own API key from https://ocr.space, you can obtain one for free and replace the current key within ```runebot.ocr.misc.API -> postData.put("apikey", "YOUR_KEY")```.
 
 ## Usage
 **cmd.exe/PowerShell.exe** -> `java -jar KotlinTest-1.0-SNAPSHOT.jar`
