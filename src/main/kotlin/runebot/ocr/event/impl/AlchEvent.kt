@@ -1,16 +1,15 @@
 package runebot.ocr.event.impl
 
+import org.jnativehook.keyboard.NativeKeyEvent
 import runebot.ocr.Constants
 import runebot.ocr.OCRHandler
 import runebot.ocr.event.Event
 import runebot.ocr.misc.WinHook
-import org.jnativehook.keyboard.NativeKeyEvent
-import kotlin.random.Random
 
-class AlchEvent : Event(Random.nextInt(2115, 4215)) { //2120s = ~35 minutes, 7400s = 2 hours and a few minutes
+class AlchEvent : Event(Constants.alchWaitTime()) { //2120s = ~35 minutes, 7400s = 2 hours and a few minutes
 
     override fun run() {
-        this.delay = Random.nextInt(2115, 4215);
+        this.delay = Constants.alchWaitTime();
         if(!TriviaEvent.inProgress)
             type()
     }

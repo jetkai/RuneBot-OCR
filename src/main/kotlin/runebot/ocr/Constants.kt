@@ -1,5 +1,7 @@
 package runebot.ocr
 
+import kotlin.random.Random
+
 object Constants {
 
     /**
@@ -25,6 +27,12 @@ object Constants {
     const val barrowsEventEnabled : Boolean = false
     const val alchEventEnabled : Boolean = true
     const val mEventEnabled : Boolean = false
+
+    //Event Timers (in seconds)
+    fun waitTime() = Random.nextInt(1920, 2460)
+    fun alchWaitTime() = Random.nextInt(2115, 4215)
+    fun trainCombatWaitTime() = Random.nextInt(7200, 8000)
+    fun triviaWaitTime() = Random.nextInt(22000, 24000)
 
     //Used in all Events & OCR.kt
     const val discordName = "kai"

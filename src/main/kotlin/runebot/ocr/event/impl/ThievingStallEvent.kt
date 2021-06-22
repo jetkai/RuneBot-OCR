@@ -1,9 +1,9 @@
 package runebot.ocr.event.impl
 
+import org.jnativehook.keyboard.NativeKeyEvent
 import runebot.ocr.OCRHandler
 import runebot.ocr.event.Event
 import runebot.ocr.misc.WinHook
-import org.jnativehook.keyboard.NativeKeyEvent
 
 class ThievingStallEvent : Event(35) { //35 seconds
 

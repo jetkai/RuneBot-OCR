@@ -1,5 +1,6 @@
 package runebot.ocr.event.impl
 
+import org.jnativehook.keyboard.NativeKeyEvent.*
 import runebot.ocr.Constants
 import runebot.ocr.OCRHandler
 import runebot.ocr.event.Event
@@ -7,17 +8,15 @@ import runebot.ocr.misc.API
 import runebot.ocr.misc.CaptureScreen
 import runebot.ocr.misc.WinHook
 import runebot.ocr.trivia.Trivia
-import org.jnativehook.keyboard.NativeKeyEvent.*
-import kotlin.random.Random
 
-class TriviaEvent : Event(Random.nextInt(22000, 24000)) { //22,000 (seconds) = 6 Hours and a lil bit
+class TriviaEvent : Event(Constants.triviaWaitTime()) { //22,000 (seconds) = 6 Hours and a lil bit
 
     companion object {
         var inProgress : Boolean = false
     }
 
     override fun run() = try {
-        this.delay = Random.nextInt(22000, 24000);
+        this.delay = Constants.triviaWaitTime()
         inProgress = true
         type()
     } catch (e : Exception) {

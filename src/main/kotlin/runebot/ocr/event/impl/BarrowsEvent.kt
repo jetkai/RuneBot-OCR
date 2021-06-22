@@ -1,16 +1,15 @@
 package runebot.ocr.event.impl
 
+import org.jnativehook.keyboard.NativeKeyEvent
 import runebot.ocr.Constants
 import runebot.ocr.OCRHandler
 import runebot.ocr.event.Event
 import runebot.ocr.misc.WinHook
-import org.jnativehook.keyboard.NativeKeyEvent
-import kotlin.random.Random
 
-class BarrowsEvent : Event(Random.nextInt(1920, 2460)) { //1920s = 32 minutes, 7400s = 2 hours and a few minutes
+class BarrowsEvent : Event(Constants.waitTime()) { //1920s = 32 minutes, 7400s = 2 hours and a few minutes
 
     override fun run() {
-        this.delay = Random.nextInt(1920, 2460)
+        this.delay = Constants.waitTime()
         if(!TriviaEvent.inProgress)
             type()
     }

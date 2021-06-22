@@ -1,16 +1,15 @@
 package runebot.ocr.event.impl
 
+import org.jnativehook.keyboard.NativeKeyEvent
 import runebot.ocr.Constants
 import runebot.ocr.OCRHandler
 import runebot.ocr.event.Event
 import runebot.ocr.misc.WinHook
-import org.jnativehook.keyboard.NativeKeyEvent
-import kotlin.random.Random
 
-class PickPocketEvent : Event(Random.nextInt(1920, 2460)) { //32 minutes
+class PickPocketEvent : Event(Constants.waitTime()) { //32 minutes
 
     override fun run() {
-        this.delay = Random.nextInt(1920, 2460)
+        this.delay = Constants.waitTime()
         if(!TriviaEvent.inProgress)
             type()
     }
