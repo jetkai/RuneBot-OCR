@@ -16,10 +16,13 @@ class TriviaEvent : Event(Random.nextInt(22000, 24000)) { //22,000 (seconds) = 6
         var inProgress : Boolean = false
     }
 
-    override fun run() {
+    override fun run() = try {
         this.delay = Random.nextInt(22000, 24000);
         inProgress = true
         type()
+    } catch (e : Exception) {
+        inProgress = false
+        e.printStackTrace()
     }
 
     private fun type() {
