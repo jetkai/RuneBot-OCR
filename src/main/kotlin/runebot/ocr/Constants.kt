@@ -40,7 +40,7 @@ object Constants {
     //Used in TrainCombatEvent.kt, TEMP
     const val combatType = "melee" //NumPad1 = Melee, NumPad2 = Magic, NumPad3 = Ranged
     const val monster = "tree spirit" //Common: general graardor
-    const val time = 30
+    const val time = 120
 
     //Used in MineEvent.kt, TEMP
     const val rock = "coal"
