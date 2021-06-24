@@ -30,7 +30,7 @@ object Constants {
 
     //Event Timers (in seconds)
     fun waitTime() = Random.nextInt(1920, 2460)
-    fun alchWaitTime() = Random.nextInt(2115, 4215)
+    fun alchWaitTime() = Random.nextInt(3700, 4715)
     fun trainCombatWaitTime() = Random.nextInt(7200, 8000)
     fun triviaWaitTime() = Random.nextInt(22000, 24000)
 
@@ -39,7 +39,7 @@ object Constants {
 
     //Used in TrainCombatEvent.kt, TEMP
     const val combatType = "melee" //NumPad1 = Melee, NumPad2 = Magic, NumPad3 = Ranged
-    const val monster = "tree spirit" //Common: general graardor
+    const val monster = "general graardor" //Common: general graardor
     const val time = 120
 
     //Used in MineEvent.kt, TEMP
