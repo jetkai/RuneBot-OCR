@@ -13,12 +13,12 @@ object Constants {
      */
 
     //Set Enabled Events
-    const val trainCombatEventEnabled : Boolean = true
+    const val trainCombatEventEnabled : Boolean = false
     const val triviaEventEnabled : Boolean = true
     const val mineEventEnabled : Boolean = false
     const val buryEventEnabled : Boolean = false
     const val chopEventEnabled : Boolean = false
-    const val fishEventEnabled : Boolean = false
+    const val fishEventEnabled : Boolean = true
     const val cookEventEnabled : Boolean = false
     const val thievingEventEnabled : Boolean = false
     const val pickPocketEventEnabled : Boolean = false
@@ -30,8 +30,8 @@ object Constants {
 
     //Event Timers (in seconds)
     fun waitTime() = Random.nextInt(1920, 2460)
-    fun alchWaitTime() = Random.nextInt(3700, 4715)
-    fun trainCombatWaitTime() = Random.nextInt(7200, 8000)
+    fun alchWaitTime() = Random.nextInt(4000, 4715)
+    fun longWaitTime() = Random.nextInt(7600, 8200)
     fun triviaWaitTime() = Random.nextInt(22000, 24000)
 
     //Used in all Events & OCR.kt
@@ -52,7 +52,7 @@ object Constants {
     const val logs = "log"
 
     //Used in FishEvent.kt & CookEvent.kt, TEMP
-    const val fish = "raw swordfish"
+    const val fish = "monkfish"
 
     //Used in PickPocketEvent.kt, TEMP
     const val npc = "man"

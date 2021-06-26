@@ -6,10 +6,10 @@ import runebot.ocr.OCRHandler
 import runebot.ocr.event.Event
 import runebot.ocr.misc.WinHook
 
-class TrainCombatEvent : Event(Constants.trainCombatWaitTime()) { //1920s = 32 minutes, 7400s = 2 hours and a few minutes
+class TrainCombatEvent : Event(Constants.longWaitTime()) { //1920s = 32 minutes, 7400s = 2 hours and a few minutes
 
     override fun run() {
-        this.delay = Constants.trainCombatWaitTime()
+        this.delay = Constants.longWaitTime()
         if(!TriviaEvent.inProgress)
             type()
     }
