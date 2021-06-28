@@ -8,8 +8,7 @@ import runebot.ocr.misc.WinHook
 class ThievingStallEvent : Event(35) { //35 seconds
 
     override fun run() {
-        if(!TriviaEvent.inProgress)
-            type()
+        when { !TriviaEvent.inProgress -> type() }
     }
 
     //TODO Complete Random Event (Trivia Questions): "@jet kai, random event, answer the following question... Name a guthix shield."

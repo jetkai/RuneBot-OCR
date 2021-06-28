@@ -10,8 +10,7 @@ class TrainCombatEvent : Event(Constants.longWaitTime()) { //1920s = 32 minutes,
 
     override fun run() {
         this.delay = Constants.longWaitTime()
-        if(!TriviaEvent.inProgress)
-            type()
+        when { !TriviaEvent.inProgress -> type() }
     }
 
     private fun type() {

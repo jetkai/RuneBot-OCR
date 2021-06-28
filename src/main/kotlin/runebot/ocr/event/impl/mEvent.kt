@@ -10,8 +10,7 @@ class mEvent : Event(Random.nextInt(2115, 4215)) { //2120s = ~35 minutes, 7400s 
 
     override fun run() {
         this.delay = Random.nextInt(2115, 4215)
-        if(!TriviaEvent.inProgress)
-            type()
+        when { !TriviaEvent.inProgress -> type() }
     }
 
     private fun type() {

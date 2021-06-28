@@ -10,8 +10,7 @@ class PickPocketEvent : Event(Constants.waitTime()) { //32 minutes
 
     override fun run() {
         this.delay = Constants.waitTime()
-        if(!TriviaEvent.inProgress)
-            type()
+        when { !TriviaEvent.inProgress -> type() }
     }
 
     private fun type() {

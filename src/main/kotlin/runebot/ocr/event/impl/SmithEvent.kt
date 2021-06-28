@@ -10,8 +10,7 @@ class SmithEvent : Event(Constants.waitTime()) { //1920s = 32 minutes
 
     override fun run() {
         this.delay = Constants.waitTime()
-        if(!TriviaEvent.inProgress)
-            type()
+        when { !TriviaEvent.inProgress -> type() }
     }
 
     private fun type() {

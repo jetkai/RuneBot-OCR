@@ -10,8 +10,7 @@ class AlchEvent : Event(Constants.alchWaitTime()) { //2120s = ~35 minutes, 7400s
 
     override fun run() {
         this.delay = Constants.alchWaitTime();
-        if(!TriviaEvent.inProgress)
-            type()
+        when { !TriviaEvent.inProgress -> type() }
     }
 
     private fun type() {
