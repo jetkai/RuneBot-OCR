@@ -52,7 +52,7 @@ object Constants {
     const val logs = "log"
 
     //Used in FishEvent.kt & CookEvent.kt, TEMP
-    const val fish = "monkfish"
+    const val fish = "anglerfish"
 
     //Used in PickPocketEvent.kt, TEMP
     const val npc = "man"
