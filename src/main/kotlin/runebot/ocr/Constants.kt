@@ -18,8 +18,8 @@ object Constants {
     const val mineEventEnabled : Boolean = false
     const val buryEventEnabled : Boolean = false
     const val chopEventEnabled : Boolean = false
-    const val fishEventEnabled : Boolean = false
-    const val cookEventEnabled : Boolean = true
+    const val fishEventEnabled : Boolean = true
+    const val cookEventEnabled : Boolean = false
     const val thievingEventEnabled : Boolean = false
     const val pickPocketEventEnabled : Boolean = false
     const val smeltEventEnabled : Boolean = false
