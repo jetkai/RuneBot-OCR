@@ -25,7 +25,7 @@ object Constants {
     const val smeltEventEnabled : Boolean = false
     const val smithEventEnabled : Boolean = false
     const val barrowsEventEnabled : Boolean = false
-    const val alchEventEnabled : Boolean = true
+    const val alchEventEnabled : Boolean = false
     const val mEventEnabled : Boolean = false
 
     //Event Timers (in seconds)
