@@ -14,7 +14,7 @@ object Constants {
 
     //Set Enabled Events
     const val trainCombatEventEnabled : Boolean = false
-    const val triviaEventEnabled : Boolean = true
+    const val triviaEventEnabled : Boolean = false
     const val mineEventEnabled : Boolean = false
     const val buryEventEnabled : Boolean = false
     const val chopEventEnabled : Boolean = false
@@ -52,7 +52,7 @@ object Constants {
     const val logs = "log"
 
     //Used in FishEvent.kt & CookEvent.kt, TEMP
-    const val fish = "anglerfish"
+    const val fish = "monkfish"
 
     //Used in PickPocketEvent.kt, TEMP
     const val npc = "man"
